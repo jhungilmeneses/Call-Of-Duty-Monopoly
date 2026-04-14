@@ -1,0 +1,21 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "lobbies": {
+      "$lobby_id": {
+        ".read": true,
+        ".write": true,
+        "host": {
+          ".validate": "newData.isString()"
+        },
+        "createdAt": {
+          ".validate": "newData.isNumber()"
+        },
+        "players": {
+          ".validate": "newData.hasChildren()"
+        }
+      }
+    }
+  }
+}
